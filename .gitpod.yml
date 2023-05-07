@@ -4,7 +4,7 @@
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 # images are at: https://hub.docker.com/search?q=gitpod
-image: ./dockerfile
+image: dockerfile
 tasks:
   - init: | 
         pip install .
