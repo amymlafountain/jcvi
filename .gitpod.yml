@@ -7,7 +7,7 @@
 image: gitpod/workspace-python-3.9
 tasks:
   - init: |
-        NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        sudo NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         gp sync-done install-brew
   - init: | 
         pip install .
