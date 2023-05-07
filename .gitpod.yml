@@ -4,22 +4,7 @@
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 # images are at: https://hub.docker.com/search?q=gitpod
-image: gitpod/workspace-python-3.9
+image: ./dockerfile
 tasks:
-  - init: |
-        sudo NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        gp sync-done install-brew
   - init: | 
         pip install .
-
-        # wait for brew to install
-        gp sync-await install-brew
-
-        # configure brew to support bioconda
-        brew install --cask anaconda
-        conda config --add channels defaults
-        conda config --add channels bioconda
-        conda config --add channels conda-forge
-        conda config --set channel_priority strict
-
-        conda install lastal
