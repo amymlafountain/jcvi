@@ -1,15 +1,10 @@
 FROM gitpod/workspace-python-3.9
 
-# install and configure brew
-RUN NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-ENV PATH="/home/linuxbrew/.linuxbrew/bin:$PATH" 
-
-# install conda and configure bioconda
-RUN brew install --cask anaconda
-RUN conda config --add channels defaults
-RUN conda config --add channels bioconda
-RUN conda config --add channels conda-forge
-RUN conda config --set channel_priority strict
+# install and configure miniconda
+RUN curl -fsSL https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh -o /tmp/miniconda.sh
+RUN chmod +x /tmp/miniconda.sh
+RUN bash -c "/tmp/miniconda.sh -b"
+ENV PATH=$PATH:/home/gitpod/miniconda3/bin
 
 RUN conda install lastal
 
