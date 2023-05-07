@@ -6,6 +6,20 @@
 # images are at: https://hub.docker.com/search?q=gitpod
 image: gitpod/workspace-python-3.9
 tasks:
-  - init: pip install .
+  - init: |
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      gp await-done brew
+  - init: | 
+      pip install .
 
+      # wait for brew to install
+      gp await-await brew
 
+      # configure brew to support bioconda
+      brew install --cask anaconda
+      conda config --add channels defaults
+      conda config --add channels bioconda
+      conda config --add channels conda-forge
+      conda config --set channel_priority strict
+
+      conda install lastal
