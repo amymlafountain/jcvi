@@ -1,4 +1,7 @@
 # Created by http://www.gitignore.io
+version.py
+jcvi/assembly/chic.C
+
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -48,3 +51,5 @@ docs/_build/
 
 # gffutils temp DB file
 *.db
+jcvi/assembly/chic.c
+jcvi/formats/cblast.c
