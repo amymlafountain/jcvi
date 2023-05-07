@@ -6,5 +6,10 @@ RUN chmod +x /tmp/miniconda.sh
 RUN bash -c "/tmp/miniconda.sh -b"
 ENV PATH=$PATH:/home/gitpod/miniconda3/bin
 
-RUN conda install lastal
+RUN conda config --add channels defaults \
+    & conda config --add channels bioconda \
+    & conda config --add channels conda-forge \
+    & conda config --set channel_priority strict
+
+RUN conda install -c bioconda last
 
