@@ -1,5 +1,7 @@
 # JCVI utility libraries
 
+### This repository uses the JCVI utility library to perform Macro- and Microsynteny analyses among the Erythranthe clade in Mimulus. Gitpod is a cloud-based development environment that you can use to run the analyses--just click the "Open in Gitpod" button below to spin up a workspace that is ready to run JCVI!
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/amymlafountain/jcvi)
 
 [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.31631.svg)](https://doi.org/10.5281/zenodo.594205)
